@@ -46,7 +46,6 @@ public class WatchlistAsynctasks extends AsyncTask {
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
