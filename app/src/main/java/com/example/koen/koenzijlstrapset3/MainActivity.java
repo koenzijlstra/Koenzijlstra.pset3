@@ -22,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
         edit =  (EditText) findViewById(R.id.editText);
     }
 
-    // when button is clicked -> go to
+    // when button is clicked -> go to watchlist
     public void startActivity(View view) {
         Intent gotowatchlist = new Intent(this, Watchlist.class);
         startActivity(gotowatchlist);
     }
 
     public void searchmovie(View view) {
+        // get the string the user filed in the edittext
         String query = edit.getText().toString();
 
         // in order to make url working when there is a space between words in title, replace space

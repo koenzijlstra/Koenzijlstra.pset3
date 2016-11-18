@@ -10,36 +10,33 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-/**
- * Created by Koen on 16-11-2016.
- */
-
-
+// used ideas from https://www.tutorialspoint.com/android/android_json_parser.htm
 
 public class WatchlistAsynctasks extends AsyncTask {
 
     // make context
     private static Context context;
 
-    private String query;
-
+    private String search;
     private String title, year, plot, actors, rating;
 
     public WatchlistAsynctasks(Context c, String input) {
-         query = input;
+         search = input;
          context = c;
     }
 
     @Override
     protected void onPreExecute () {
         super.onPreExecute();
+        // first thing is a toast "searching", to show user that something will be done.
         Toast.makeText(context, "Searching", Toast.LENGTH_SHORT).show();
     }
 
+    // create json object of movie that user searched for
     @Override
     protected Void doInBackground(Object[] params) {
         try {
-            JSONObject moviejson = httphelper.readJsonFromUrl(query);
+            JSONObject moviejson = httphelper.readJsonFromUrl(search);
             title = moviejson.getString("Title");
             year = moviejson.getString("Year");
             plot = moviejson.getString("Plot");
@@ -51,9 +48,10 @@ public class WatchlistAsynctasks extends AsyncTask {
         }
 
         return null;
-        // to do: json object verwerken
     }
 
+
+    // make intent, give data from doinbackground as extra with intent, start activity
     @Override
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
@@ -66,6 +64,5 @@ public class WatchlistAsynctasks extends AsyncTask {
         gotofullinfo.putExtra("ratingid", rating);
 
         context.startActivity(gotofullinfo);
-
     }
 }

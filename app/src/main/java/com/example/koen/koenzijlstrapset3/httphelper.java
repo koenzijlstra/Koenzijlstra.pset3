@@ -17,9 +17,11 @@ import java.nio.charset.Charset;
 
 
 public class httphelper {
+    // make the first and the last part of the url. these can not and won't need to be changed ever
     final static String url1=  "http://www.omdbapi.com/?t=";
     final static String url2 = "&y=&plot=short&r=json";
 
+    // http://stackoverflow.com/questions/7190208/how-to-read-string-builder-line-by-line
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -28,7 +30,7 @@ public class httphelper {
         }
         return sb.toString();
     }
-
+    
     public static JSONObject readJsonFromUrl(String query) throws IOException, JSONException {
         InputStream is = new URL(url1 + query + url2).openStream();
         try {
