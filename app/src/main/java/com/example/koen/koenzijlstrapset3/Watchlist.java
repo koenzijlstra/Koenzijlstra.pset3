@@ -16,7 +16,7 @@ public class Watchlist extends AppCompatActivity {
         setContentView(R.layout.activity_watchlist);
 
 
-        String[] Movies = {"Batman", "Lone survivor", "Warrior", "Fury", "Southpaw"};
+        String[] Movies = {"Batman", "Lone survivor", "Gladiator", "Fury", "Southpaw", "Black hawk down"};
 
         ListAdapter theadapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Movies); // deze nog aanmaken?
         ListView thelistview = (ListView) findViewById(R.id.listview);

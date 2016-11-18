@@ -18,7 +18,8 @@ public class fullinfo extends AppCompatActivity {
         String title = extras.getString("titleid");
         String year = extras.getString("yearid");
         String plot = extras.getString("plotid");
-
+        String actors = extras.getString("actorsid");
+        String ratings = extras.getString("ratingid");
 
         TextView titleview =  (TextView) findViewById(R.id.title);
         titleview.setText(title);
@@ -29,11 +30,21 @@ public class fullinfo extends AppCompatActivity {
         TextView plotview = (TextView) findViewById(R.id.plot);
         plotview.setText(plot);
 
+
+        TextView actorsview = (TextView) findViewById(R.id.actors);
+        String ac = "Actors: ";
+        String fullac = ac + actors;
+        actorsview.setText(fullac);
+
+        TextView ratingview = (TextView) findViewById(R.id.rating);
+        String rt = "IMDB Rating: ";
+        String fullrt = rt + ratings;
+        ratingview.setText(fullrt);
     }
 
     public void startActivity(View view) {
         Intent gotowatchlist = new Intent(this, Watchlist.class);
         startActivity(gotowatchlist);
+        finish();
     }
-
 }

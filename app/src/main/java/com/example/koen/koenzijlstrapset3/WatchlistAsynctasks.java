@@ -23,7 +23,7 @@ public class WatchlistAsynctasks extends AsyncTask {
 
     private String query;
 
-    private String title, year, plot;
+    private String title, year, plot, actors, rating;
 
     public WatchlistAsynctasks(Context c, String input) {
          query = input;
@@ -43,6 +43,8 @@ public class WatchlistAsynctasks extends AsyncTask {
             title = moviejson.getString("Title");
             year = moviejson.getString("Year");
             plot = moviejson.getString("Plot");
+            actors = moviejson.getString("Actors");
+            rating = moviejson.getString("imdbRating");
 
         } catch (IOException | JSONException e) {
             e.printStackTrace();
@@ -60,6 +62,8 @@ public class WatchlistAsynctasks extends AsyncTask {
         gotofullinfo.putExtra("titleid", title);
         gotofullinfo.putExtra("yearid", year);
         gotofullinfo.putExtra("plotid", plot);
+        gotofullinfo.putExtra("actorsid", actors);
+        gotofullinfo.putExtra("ratingid", rating);
 
         context.startActivity(gotofullinfo);
 

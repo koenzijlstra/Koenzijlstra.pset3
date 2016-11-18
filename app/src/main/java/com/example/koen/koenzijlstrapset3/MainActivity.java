@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         edit =  (EditText) findViewById(R.id.editText);
     }
 
@@ -36,6 +35,5 @@ public class MainActivity extends AppCompatActivity {
         // with plus
         query = query.replace(" ", "+");
         new WatchlistAsynctasks(MainActivity.this, query).execute();
-
     }
 }
