@@ -30,7 +30,7 @@
         android:layout_alignParentStart="true"
         android:textStyle="normal"
         android:textSize="30sp"/>
-    
+
 
     <Button
         android:text="@string/Seewl"
@@ -39,13 +39,14 @@
         android:id="@+id/button4"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="startActivity"/>
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5"
+        android:id="@+id/year"
         android:layout_below="@+id/title"
         android:layout_centerHorizontal="true" />
 
@@ -53,10 +54,11 @@
         android:text="@string/dummy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/info"
-        android:layout_centerVertical="true"
+        android:id="@+id/plot"
+        android:layout_below="@+id/year"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp" />
 
 
 </RelativeLayout>
