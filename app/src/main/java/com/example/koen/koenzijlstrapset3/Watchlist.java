@@ -29,6 +29,8 @@ public class Watchlist extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 String clickedtitle = String.valueOf(adapterView.getItemAtPosition(position));
+
+
                 clickedtitle = clickedtitle.replace(" ", "+");
 
                 new WatchlistAsynctasks(Watchlist.this, clickedtitle).execute();
